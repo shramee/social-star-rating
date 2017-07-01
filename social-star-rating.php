@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -15,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Social star rating
  * Plugin URI:        https://github.com/shramee/social-star-rating
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Star Review and Rating WordPress plugin that integrates with Google Places, Facebook, Yelp and Healthy Hearing. Use shortcodes [social-start-rating] and [social-start-rating-feed] to show rating widget and feed respectively.
  * Version:           1.0.0
  * Author:            Shramee
  * Author URI:        http://shramee.me
@@ -29,6 +28,8 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+define( 'SSRATEURL', plugin_dir_url( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.

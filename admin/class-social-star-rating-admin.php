@@ -55,26 +55,17 @@ class Social_Star_Rating_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
-	 *
+	 * Handles ajax requests and renders pop ups
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Social_Star_Rating_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Social_Star_Rating_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/social-star-rating-admin.css', array(), $this->version, 'all' );
-
+	public function admin_ajax() {
+		if ( isset( $_GET['s'] ) ) {
+			$file = dirname( __FILE__ ) . "/partials/ajax-$_GET[s].php";
+			if ( file_exists( $file ) ) {
+				include $file;
+			}
+		}
+		die();
 	}
 
 	/**
@@ -84,19 +75,8 @@ class Social_Star_Rating_Admin {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Social_Star_Rating_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Social_Star_Rating_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/social-star-rating-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_style( $this->plugin_name, SSRATEURL . 'css/social-star-rating-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_script( $this->plugin_name, SSRATEURL . 'js/social-star-rating-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 

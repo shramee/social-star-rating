@@ -1,0 +1,397 @@
+body {
+	font: 300 14px/1.1 aRoboto, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+	padding: 1em;
+	margin: auto;
+}
+
+p {
+	margin: 0.5em 0;
+	line-height: 1.4;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Form */
+
+form {
+	margin: 0;
+}
+
+.field-label {
+	display: block;
+	height: 7px;
+	width: 1px;
+	overflow: hidden;
+}
+
+fieldset {
+	border: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+}
+
+form input, form textarea, form textarea#content {
+	max-width: 100%;
+	padding: 3px 6px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555555;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #cccccc;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0
+}
+
+form input.error, form textarea.error, form textarea#content.error {
+	border: 1px solid #b94a48 !important;
+	background-color: #f2dede !important;
+	color: #d64 !important
+}
+
+form input.success, form textarea.success, form textarea#content.success {
+	border: 1px solid #468847 !important;
+	background-color: #dff0d8 !important;
+	color: #4a6 !important
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+	height: 32px;
+	width: 90%
+}
+
+form textarea {
+	height: 120px;
+	width: 90%
+}
+
+form .footer, form .modal-footer {
+	text-align: center
+}
+
+form .footer input, form .modal-footer input {
+	width: auto;
+	height: auto;
+	display: inline-block
+}
+
+#popup-contact [href="#popup-share"] {
+	color: #e95643;
+}
+
+#popup-contact footer {
+	color: #999;
+	font-size: 13px;
+}
+
+.contact-form input[type="submit"] {
+	margin: 1em 0 0
+}
+
+.contact-form input[name="message"] {
+	padding: 5px !important;
+	height: 90px
+}
+
+p.gray {
+	color: #aaa;
+	text-align: center;
+}
+
+p.gray,
+#brand,
+.powered {
+	text-align: center;
+}
+
+#brand {
+	font-size: 36px;
+	font-weight: 700;
+	margin: 25px 0;
+	color: #324554;
+}
+
+.blue-large {
+	color: #1b75bb;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.powered {
+	font-size: 11.2px;
+}
+
+.stars {
+	width: 300px;
+	margin: 43px auto 83px;
+	text-align: center;
+}
+
+.stars:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.star {
+	padding: 1px;
+	display: inline-block;
+	width: 58px;
+	min-height: 56px;
+	float: right;
+	background: no-repeat center/500px url(sprites.png);
+	background-position: -60px -124px;
+}
+
+.star span {
+	display: block;
+	margin-top: 4.1em;
+	opacity: 0;
+	position: relative;
+	top: -5px;
+	transition: all 0.25s;
+}
+
+.star:hover span {
+	margin-top: 4em;
+	opacity: 1;
+	top: 0;
+}
+
+.star:hover,
+.star:hover ~ .star {
+	background-position: 0 -124px;
+}
+
+/* Popup */
+.popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 12px;
+	background: #fff;
+	border: 1px solid #aaa;
+	border-radius: 7px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	display: none;
+	overflow: hidden;
+}
+
+.popup.grey-bg {
+	background: #eee;
+}
+
+.popup:target {
+	display: block;
+}
+
+.popup .close {
+	position: absolute;
+	top: 11px;
+	right: 16px;
+	font-weight: bold;
+	font-size: 21px;
+	color: #ccc;
+}
+
+.popup .close:hover {
+	color: #555;
+}
+
+.popup header,
+.popup section,
+.popup footer {
+	padding: 1em;
+}
+
+.popup header {
+	padding: 2em;
+	background: #fff;
+	border-bottom: 2px solid #ddd;
+}
+
+.popup section {
+}
+
+.popup footer {
+	border-top: 1px solid #ddd;
+	text-align: center;
+}
+
+input[type='submit'],
+.popup.share footer a.link {
+	color: white;
+	background-color: #e95643;
+	border: 1px solid #ed7565;
+	border-top: 1px solid #f5b2aa;
+	border-bottom: 1px solid #e53721;
+	display: inline-block;
+	padding: 4px 10px;
+	line-height: 27px;
+	margin: 0 2px;
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+	border-width: 1px 1px 3px;
+}
+
+/* Share links */
+
+#links ul li {
+	display: block;
+	text-align: center;
+}
+
+#links ul {
+	padding: 0;
+	margin: 0
+}
+
+#links ul li {
+	display: block;
+	text-align: center;
+	margin: 0 0 1em;
+	background-image: -moz-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+	background-image: -ms-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+	background-image: -o-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+	background-image: linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+	zoom: 1;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #bfbfbf;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+#links ul li:last-of-type {
+	margin: 0;
+}
+
+#links ul a {
+	display: block;
+	line-height: 70px;
+	background: center 9px/auto 49px no-repeat;
+	transition: background 0.25s;
+	overflow: hidden;
+	text-indent: -9999px;
+	position: relative;
+}
+
+#links ul a:hover {
+	background: center -3px/auto 70px no-repeat;
+}
+
+#links ul a .footer {
+	display: block;
+	position: absolute;
+	background: #fff;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-indent: 0;
+	font-size: 9px;
+	font-weight: 300;
+	border-top: 1px solid #ddd;
+	line-height: 18px;
+	color: #988;
+}
+
+#links ul a#google {
+	background-image: url(google.png);
+}
+
+#links ul a#facebook {
+	background-image: url(facebook.png);
+}
+
+#links ul a#yelp {
+	background-image: url(yelp.png);
+}
+
+#links ul a#healthyhearing {
+	background-image: url(healthyhearing.png);
+}
+
+#links ul a#healthyhearing span:before {
+	content: attr(data-notice);
+	line-height: 14px;
+	font-size: 8px;
+	margin: 2px;
+	display: inline-block;
+	background: #2a4;
+	padding: 0 5px;
+	border-radius: 99px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 100;
+}
+
+i.fb-blue {
+	background: no-repeat url(sprites.png);
+	background-color: #3B5998;
+	background-position: -900px -120px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin: -2px 2px 0;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.social-title {
+	height: 100px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: center/contain no-repeat;
+	margin: 0;
+}
+
+#popup-google-label {
+	background-image: url(google-lg.png);
+}
+
+#popup-facebook-label {
+	background-image: url(facebook-lg.png);
+}
+
+#popup-yelp-label {
+	background-image: url(yelp-lg.png);
+}
+
+#popup-healthyhearing-label {
+	background-image: url(healthyhearing-lg.png);
+}
+
+.popup.share {
+	line-height: 1.6;
+}
+
+.popup.share p {
+	line-height: inherit;
+	margin: 0.7em 0;
+}
+
+.popup.share ul {
+	margin-bottom: 5em;
+}

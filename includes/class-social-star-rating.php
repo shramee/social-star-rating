@@ -151,7 +151,8 @@ class Social_Star_Rating {
 
 		$plugin_admin = new Social_Star_Rating_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_ajax_social-star-review', $plugin_admin, 'admin_ajax' );
+		$this->loader->add_action( 'wp_ajax_nopriv_social-star-review', $plugin_admin, 'admin_ajax' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 	}
@@ -167,7 +168,7 @@ class Social_Star_Rating {
 
 		$plugin_public = new Social_Star_Rating_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		$this->loader->add_action( 'init', $plugin_public, 'shortcodes' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}

@@ -55,26 +55,39 @@ class Social_Star_Rating_Public {
 	}
 
 	/**
-	 * Register the stylesheets for the public-facing side of the site.
+	 * Registers required shortcodes
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function shortcodes() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Social_Star_Rating_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Social_Star_Rating_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		add_shortcode( 'social-start-rating', [ $this, 'star_rating_shortcode' ] );
+		add_shortcode( 'social-start-rating-feed', [ $this, 'feed_shortcode' ] );
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/social-star-rating-public.css', array(), $this->version, 'all' );
+	}
 
+	/**
+	 * Renders star rating shortcode
+	 *
+	 * @since    1.0.0
+	 */
+	public function star_rating_shortcode() {
+		$url = admin_url( 'admin-ajax.php?action=social-star-review&s=rate' );
+		?>
+		<iframe style="min-height:700px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
+		<?php
+	}
+
+	/**
+	 * Renders star rating shortcode
+	 *
+	 * @since    1.0.0
+	 */
+	public function feed_shortcode() {
+		$url = admin_url( 'admin-ajax.php?action=social-star-review&s=feed' );
+		?>
+		<iframe style="min-height:700px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
+		<?php
 	}
 
 	/**
@@ -84,19 +97,8 @@ class Social_Star_Rating_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Social_Star_Rating_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Social_Star_Rating_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/social-star-rating-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_style( $this->plugin_name, SSRATEURL . 'css/social-star-rating-public.css', array(), $this->version, 'all' );
+		wp_enqueue_script( $this->plugin_name, SSRATEURL . 'js/social-star-rating-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
