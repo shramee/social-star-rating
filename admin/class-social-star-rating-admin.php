@@ -60,8 +60,21 @@ class Social_Star_Rating_Admin {
 	 */
 	public function admin_ajax() {
 		if ( isset( $_GET['s'] ) ) {
-			$file = dirname( __FILE__ ) . "/partials/ajax-$_GET[s].php";
+			$file = SSRATEPATH . "public/partials/ajax-$_GET[s].php";
 			if ( file_exists( $file ) ) {
+
+				$links = array(
+					'google' => 'https://www.google.com/search?q=hear+care+audiology&rlz=1C5CHFA_enUS723US723&oq=hear+care+audiology&aqs=chrome..69i57j69i60l2j0l3.3238j0j4&sourceid=chrome&ie=UTF-8#lrd=0x8815fc80aef93e09:0x454e3cf4479dc45,1,',
+					'facebook' => 'https://www.facebook.com/HearCareAudiology/?fref=ts',
+					'yelp' => 'https://www.yelp.com/biz/hearcare-audiology-and-hearing-aid-centers-fort-wayne',
+					'healthyhearing' => 'http://www.healthyhearing.com/hearing-aids/IN-Indiana/Fort-Wayne/46815/1608815-Hearcare-Audiology',
+				);
+
+				$mail = array(
+					'to' => 'shramee.srivastav@gmail.com',
+					'subject' => 'Message from a reviewer',
+				);
+
 				include $file;
 			}
 		}

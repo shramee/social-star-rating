@@ -102,6 +102,8 @@ class Social_Star_Rating {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-social-star-rating-loader.php';
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-social-star-rating-feed.php';
+
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.

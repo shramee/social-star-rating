@@ -30,27 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define( 'SSRATEURL', plugin_dir_url( __FILE__ ) );
-
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-social-star-rating-activator.php
- */
-function activate_social_star_rating() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-social-star-rating-activator.php';
-	Social_Star_Rating_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-social-star-rating-deactivator.php
- */
-function deactivate_social_star_rating() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-social-star-rating-deactivator.php';
-	Social_Star_Rating_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_social_star_rating' );
-register_deactivation_hook( __FILE__, 'deactivate_social_star_rating' );
+define( 'SSRATEPATH', trailingslashit( dirname( __FILE__ ) ) );
 
 /**
  * The core plugin class that is used to define internationalization,

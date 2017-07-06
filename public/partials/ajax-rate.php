@@ -1,20 +1,6 @@
-<?php
-
-$links = array(
-	'google' => 'http://google.com/my-clinic',
-	'facebook' => 'http://facebook.com/my-clinic',
-	'yelp' => 'http://yelp.com/my-clinic',
-	'healthyhearing' => 'http://healthyhearing.com/my-clinic',
-);
-
-$mail = array(
-	'to' => 'shramee.srivastav@gmail.com',
-	'subject' => 'Message from a reviewer',
-);
-?>
 <html>
 <head>
-	<link rel="stylesheet" href="<?php echo SSRATEURL ?>/admin/css/ajax-rate.css">
+	<link rel="stylesheet" href="<?php echo SSRATEURL ?>/public/css/ajax-rate.css">
 </head>
 
 <body class="en">
@@ -40,7 +26,7 @@ $mail = array(
 	</div>
 
 	<div class="powered">
-		Powered by <a href="http://www.audiologyplus.com/">AudiologyPlus.com</a>
+		Powered by <a href="https://www.automatedcampaigns.com/">Emporia Automation</a>
 	</div>
 </div>
 
