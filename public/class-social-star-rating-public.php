@@ -74,7 +74,7 @@ class Social_Star_Rating_Public {
 	public function star_rating_shortcode() {
 		$url = admin_url( 'admin-ajax.php?action=social-star-review&s=rate' );
 		?>
-		<iframe style="min-height:700px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
+		<iframe style="min-height:500px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
 		<?php
 	}
 
