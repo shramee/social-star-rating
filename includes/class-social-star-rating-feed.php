@@ -37,6 +37,42 @@ class Social_Star_Rating_Feed {
 		return self::$instance;
 	}
 
+	public function healthy_hearing_html( $links ) {
+		$transient_name = "social_star_reviews_healthyhearing";
+
+		$html = 0&&get_transient( $transient_name );
+
+		if ( ! $html ) {
+
+			$html = str_replace(
+				'class="panel-section reviews"',
+				'id="panel-reviews" class="panel-section reviews"',
+				file_get_contents( $links['healthyhearing'] )
+			);
+
+			/*
+			$html = str_replace(
+				[ '<script', '<html', '<body', '<link', '<img' ],
+				'<dummy',
+				str_replace(
+					[ '</html', '</body', '</script', ],
+					'</dummy',
+					$html
+				)
+			);
+			*/
+
+			$dom = new DOMDocument();
+			$dom->loadHTML( $html );
+
+			$html = $dom->saveHTML( $dom->getElementById( 'panel-reviews' ) );
+
+			set_transient( $transient_name, $html, DAY_IN_SECONDS );
+		}
+
+		return $html;
+	}
+
 	public function reviews( $links ) {
 		$transient_name = 'social_star_get_reviews';
 

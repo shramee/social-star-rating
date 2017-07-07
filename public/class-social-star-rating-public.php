@@ -74,7 +74,7 @@ class Social_Star_Rating_Public {
 	public function star_rating_shortcode() {
 		$url = admin_url( 'admin-ajax.php?action=social-star-review&s=rate' );
 		?>
-		<iframe style="min-height:500px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
+		<iframe style="min-height:560px;width:100%" src="<?php echo $url; ?>" frameborder="0"></iframe>
 		<?php
 	}
 
@@ -95,11 +95,6 @@ class Social_Star_Rating_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
-
-		wp_enqueue_style( $this->plugin_name, SSRATEURL . 'css/social-star-rating-public.css', array(), $this->version, 'all' );
-		wp_enqueue_script( $this->plugin_name, SSRATEURL . 'js/social-star-rating-public.js', array( 'jquery' ), $this->version, false );
-
-	}
+	public function enqueue_scripts() {}
 
 }

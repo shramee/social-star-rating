@@ -6,11 +6,12 @@
  * Time: 3:56 PM
  */
 
+$feed_man = Social_Star_Rating_Feed::instance();
 
 /*
 	array( date, rating, icon, name, content, link )
  */
-$reviews = Social_Star_Rating_Feed::instance()->reviews( $links );
+$reviews = $feed_man->reviews( $links );
 
 $rev_json = json_encode( $reviews );
 
@@ -33,16 +34,7 @@ $rev_json = json_encode( $reviews );
 ?>
 <div id="healthyhearing-html" style="display: none;">
 	<?php
-	echo
-	str_replace(
-		[ '<script', '<html', '<body', '<link', '<img' ],
-		'<dummy',
-		str_replace(
-			[ '</html', '</body', '</script', ],
-			'</dummy',
-			file_get_contents( $links['healthyhearing'] )
-		)
-	);
+	echo $feed_man->healthy_hearing_html( $links );
 	?>
 </div>
 </body>
