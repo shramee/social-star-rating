@@ -71,7 +71,7 @@ class Social_Star_Rating_Admin {
 				);
 
 				$mail = array(
-					'to' => 'shramee.srivastav@gmail.com',
+					'to' => 'mary@hearcare-indiana.com',
 					'subject' => 'Message from a reviewer',
 				);
 
