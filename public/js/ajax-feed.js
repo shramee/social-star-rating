@@ -31,9 +31,9 @@ jQuery( function ( $ ) {
 			$rev
 				.append(
 					'<header>' +
-					'<date>' + date.getFullYear() + '-' + (
+					'<time>' + date.getFullYear() + '-' + (
 					date.getMonth() + 1
-					) + '-' + date.getDate() + '</date>' +
+					) + '-' + date.getDate() + '</time>' +
 					'<div class="rating">' + starsHtml + '</div>' +
 					'</header>'
 				)
@@ -42,7 +42,7 @@ jQuery( function ( $ ) {
 					'<footer>' +
 					'<i class="icon ' + rev.icon + '"></i>' +
 					'<div class="name">' + rev.name + '</div>' +
-					'<a class="view" href="' + rev.link + '">View review</a>' +
+					'<a class="view" target="_blank" href="' + rev.link + '">View review</a>' +
 					'</footer>'
 				);
 
