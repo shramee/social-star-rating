@@ -25,9 +25,6 @@
 		<a href="#popup-contact" class="star"><span>Bad</span></a>
 	</div>
 
-	<div class="powered">
-		Powered by <a href="https://www.automatedcampaigns.com/">Emporia Automation</a>
-	</div>
 </div>
 
 <div class="popup gray-bg" id="popup-share" aria-hidden="true">
