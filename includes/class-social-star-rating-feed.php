@@ -40,7 +40,7 @@ class Social_Star_Rating_Feed {
 	public function healthy_hearing_html( $links ) {
 		$transient_name = "social_star_reviews_healthyhearing";
 
-		$html = 0&&get_transient( $transient_name );
+		$html = get_transient( $transient_name );
 
 		if ( ! $html ) {
 
